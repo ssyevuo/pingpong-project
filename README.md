@@ -43,4 +43,8 @@ The game's constants (window dimensions, colors, paddle and ball size, speeds) a
 - Collision detected between the ball and the paddle is implemented using `pygame.Rect.colliderect()`.
 - The ball's horizontal speed is reversed upon collision with either of the two paddles.
 
+## Scoring
+
+- the scoring system stracls the scores of both the players dynamically at the top of the screen
+
 

@@ -16,6 +16,13 @@ paddle1 = Paddle(50, HEIGHT // 2 - PADDLE_HEIGHT // 2)
 paddle2 =  Paddle(WIDTH - 50 - PADDLE_WIDTH, HEIGHT // 2 - PADDLE_HEIGHT // 2)
 ball = Ball(WIDTH // 2 - BALL_SIZE // 2, HEIGHT // 2 - BALL_SIZE // 2)
 
+# Score variables
+score1 = 0
+score2 = 0
+
+# font for the scores
+font = pygame.font.Font(None, 36)
+
 # game loop
 running = True
 while running:
@@ -54,6 +61,24 @@ while running:
     # ball and paddle collisions
     if ball.rect.colliderect(paddle1.rect) or ball.rect.colliderect(paddle2.rect):
         ball.speed_x *= -1
+
+    # check if the ball goes off screen 
+    if ball.rect.x <= 0:
+        score2 += 1
+        ball.rect.x = WIDTH // 2 - BALL_SIZE // 2
+        ball.rect.y = HEIGHT // 2 - BALL_SIZE // 2
+        ball.speed_x *= -1 # resets the balss direction
+    elif ball.rect.x >= WIDTH - BALL_SIZE:
+        score1 += 1
+        ball.rect.x = WIDTH // 2 - BALL_SIZE // 2
+        ball.rect.y = HEIGHT // 2 - BALL_SIZE // 2
+        ball.speed_x *= -1 # resets the balls direction
+
+    score_text1 = font.render(str(score1), True, WHITE)
+    score_text2 = font.render(str(score2), True, WHITE)
+    screen.blit(score_text1, (WIDTH // 4, 20))
+    screen.blit(score_text2, (3 * WIDTH // 4, 20))
+
 
     pygame.display.flip()
 
