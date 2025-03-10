@@ -48,5 +48,9 @@ The game's constants (window dimensions, colors, paddle and ball size, speeds) a
 - the scoring system stracls the scores of both the players dynamically at the top of the screen
 
 ## Reset ball function
-- The reset ball function in `utils.py` i sused to reset the position ofthe ball
+- The reset ball function in `utils.py` is sed to reset the position ofthe ball
+
+## Ball Sped Increase
+- The balls speed increases after each paddle hit, hence increasing the difficulty of the game
+- The speed resets when a player scores
 

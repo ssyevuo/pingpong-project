@@ -44,7 +44,7 @@ while running:
     # when u is pressed paddle 1 moves up and when d is pressed padde 1 moves donw
     if keys[pygame.K_u]:
         paddle1.move("up")
-    if keys[pygame.K_d]:
+    if keys[pygame.K_y]:
         paddle1.move("down")
     # paddle 2 usses the UP and down Keys for the same function as the u and d keys
     if keys[pygame.K_UP]:
@@ -62,6 +62,16 @@ while running:
     # ball and paddle collisions
     if ball.rect.colliderect(paddle1.rect) or ball.rect.colliderect(paddle2.rect):
         ball.speed_x *= -1
+        # increase the speed of the game
+        if ball.speed_x > 0:
+            ball.speed_x += 1
+        else:
+            ball.speed_x -= 0
+        if ball.speed_y > 0:
+            ball.speed_y += 1
+        else:
+            ball.speed_y -= 1
+
 
     # check if the ball goes off screen 
     if ball.rect.x <= 0:
