@@ -1,6 +1,6 @@
 # mainly for defining game window, dimensions, color scheme and various constants
 
-# the windows dimensions
+# the windows dimensions ie the width and the height
 WIDTH = 800
 HEIGHT = 600
 
