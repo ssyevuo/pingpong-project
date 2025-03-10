@@ -37,3 +37,10 @@ The game's constants (window dimensions, colors, paddle and ball size, speeds) a
 
 - The ball moves according to its `speed_x` and `speed_y` attributes.
 - When collision is detected the vertical speed is reversed.
+
+## Paddle Collision
+
+- Collision detected between the ball and the paddle is implemented using `pygame.Rect.colliderect()`.
+- The ball's horizontal speed is reversed upon collision with either of the two paddles.
+
+
