@@ -11,7 +11,7 @@ class Paddle:
 
     # Draws the paddle on the screen
     def draw(self, screen):
-        pygame.draw.rect(screen, WHITE, self.rect)
+        pygame.draw.rect(screen, PADDLE_COLOR, self.rect)
 
     # moves the paddle either up or down
     def move(self, direction):
@@ -34,9 +34,9 @@ class Ball:
         self.speed_x = BALL_SPEED_X # sets the balls speed horizontally
         self.speed_y = BALL_SPEED_Y # sets the balls speed vertically
 
-    # drwas the ball as a white rectangle
+    # drwas the ball as a black ball
     def draw(self, screen):
-        pygame.draw.rect(screen, WHITE, self.rect)
+        pygame.draw.circle(screen, BALL_COLOR, self.rect.center, BALL_SIZE // 2)
 
     # updates the balls position by adding its speed
     def move(self):

@@ -38,8 +38,8 @@ while running:
             running = False
     
     if game_state == GAME_STATE_START:
-        title_text = font.render("Ping Pong", True, WHITE)
-        start_text = font.render("Press SPACE to start", True, WHITE)
+        title_text = font.render("Ping Pong", True, TEXT_COLOR)
+        start_text = font.render("Press SPACE to start", True, TEXT_COLOR)
         screen.blit(title_text, (WIDTH // 2 - title_text.get_width() // 2, HEIGHT // 4))
         screen.blit(start_text, (WIDTH // 2 - start_text.get_width() // 2, HEIGHT // 2))
 
@@ -51,11 +51,11 @@ while running:
     
     # Game logic
 
-    screen.fill(BLACK)
+    screen.fill(BACKGROUND_COLOR)
 
     if game_state == GAME_STATE_GAME_OVER:
-        winner_text = font.render(f"Player {1 if score1 > score2 else 2} wins!", True, WHITE)
-        restart_text = font.render("Press SPACE to restart", True, WHITE)
+        winner_text = font.render(f"Player {1 if score1 > score2 else 2} wins!", True, TEXT_COLOR)
+        restart_text = font.render("Press SPACE to restart", True, TEXT_COLOR)
         screen.blit(winner_text, (WIDTH // 2 - winner_text.get_width() // 2, HEIGHT // 4))
         screen.blit(restart_text, (WIDTH // 2 - restart_text.get_width() // 2, HEIGHT // 2))
 
@@ -118,10 +118,15 @@ while running:
         paddle2.draw(screen)
         ball.draw(screen)
 
-    score_text1 = font.render(str(score1), True, WHITE)
-    score_text2 = font.render(str(score2), True, WHITE)
+    score_text1 = font.render(str(score1), True, TEXT_COLOR)
+    score_text2 = font.render(str(score2), True, TEXT_COLOR)
     screen.blit(score_text1, (WIDTH // 4, 20))
     screen.blit(score_text2, (3 * WIDTH // 4, 20))
+
+    # The middle net
+    for y in range(0, HEIGHT, 20):
+        net_rect = pygame.Rect(WIDTH // 2 - 2, y, 4, 10)
+        pygame.draw.rect(screen, NET_COLOR, net_rect)
 
 
     pygame.display.flip()
