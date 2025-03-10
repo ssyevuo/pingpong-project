@@ -39,9 +39,14 @@ while running:
     
     if game_state == GAME_STATE_START:
         title_text = font.render("Ping Pong", True, TEXT_COLOR)
+        player1_text = font.render("Player 1: U/Y", True, TEXT_COLOR)
+        player2_text = font.render("Player 2: UP/DOWN", True, TEXT_COLOR)
         start_text = font.render("Press SPACE to start", True, TEXT_COLOR)
+
         screen.blit(title_text, (WIDTH // 2 - title_text.get_width() // 2, HEIGHT // 4))
-        screen.blit(start_text, (WIDTH // 2 - start_text.get_width() // 2, HEIGHT // 2))
+        screen.blit(player1_text, (WIDTH // 4 - player1_text.get_width() // 2, HEIGHT // 2 - 25))
+        screen.blit(player2_text, (3 * WIDTH // 4 - player2_text.get_width() // 2, HEIGHT // 2 - 25))
+        screen.blit(start_text, (WIDTH // 2 - start_text.get_width() // 2, HEIGHT // 2 + 50))
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE]:
