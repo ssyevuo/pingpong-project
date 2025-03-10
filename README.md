@@ -16,5 +16,10 @@ The game's constants (window dimensions, colors, paddle and ball size, speeds) a
 
 ## Game Window
 
-The game window is created in `pingpong.py` using Pygame.
-The window first initializes with a black background
+- The game window is created in `pingpong.py` using Pygame.
+- he window first initializes with a black background
+
+## Paddle Class
+
+- The `Paddle` class is defined in the `sprites.py`.
+- Represents a paddle in the game and includes methos for drawing and moving the paddle around.
