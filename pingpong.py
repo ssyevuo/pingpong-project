@@ -4,6 +4,7 @@
 import pygame
 from constants import *
 from sprites import Paddle, Ball
+from utils import reset_ball
 
 pygame.init()
 
@@ -65,14 +66,10 @@ while running:
     # check if the ball goes off screen 
     if ball.rect.x <= 0:
         score2 += 1
-        ball.rect.x = WIDTH // 2 - BALL_SIZE // 2
-        ball.rect.y = HEIGHT // 2 - BALL_SIZE // 2
-        ball.speed_x *= -1 # resets the balss direction
+        reset_ball(ball)
     elif ball.rect.x >= WIDTH - BALL_SIZE:
         score1 += 1
-        ball.rect.x = WIDTH // 2 - BALL_SIZE // 2
-        ball.rect.y = HEIGHT // 2 - BALL_SIZE // 2
-        ball.speed_x *= -1 # resets the balls direction
+        reset_ball(ball)
 
     score_text1 = font.render(str(score1), True, WHITE)
     score_text2 = font.render(str(score2), True, WHITE)

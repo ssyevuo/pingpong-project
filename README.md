@@ -47,4 +47,6 @@ The game's constants (window dimensions, colors, paddle and ball size, speeds) a
 
 - the scoring system stracls the scores of both the players dynamically at the top of the screen
 
+## Reset ball function
+- The reset ball function in `utils.py` i sused to reset the position ofthe ball
 
