@@ -32,3 +32,8 @@ The game's constants (window dimensions, colors, paddle and ball size, speeds) a
 ## Paddle Movement 
 
 - Paddle movement is controlled by the key board keys U ANd D for paddle1 and UP and DOWN  arrow keys for paddle2
+
+## Ball Movement and Wall Collision
+
+- The ball moves according to its `speed_x` and `speed_y` attributes.
+- When collision is detected the vertical speed is reversed.

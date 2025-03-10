@@ -47,6 +47,10 @@ while running:
     ball.draw(screen)
     ball.move()
 
+    # checks for wall collisions and bounces it back the ball that is
+    if ball.rect.y <= 0 or ball.rect.y >= HEIGHT - BALL_SIZE:
+        ball.speed_y *= -1
+
     pygame.display.flip()
 
 pygame.quit()
