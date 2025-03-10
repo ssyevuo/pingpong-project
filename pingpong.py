@@ -99,13 +99,13 @@ while running:
             ball.speed_x *= -1
             # increase the speed of the game as the game progresses
             if ball.speed_x > 0:
-                ball.speed_x += 0.5
+                ball.speed_x += 0.25
             else:
-                ball.speed_x -= 0.5
+                ball.speed_x -= 0.25
             if ball.speed_y > 0:
-                ball.speed_y += 0.5
+                ball.speed_y += 0.25
             else:
-                ball.speed_y -= 0.5
+                ball.speed_y -= 0.25
             
             # ensure that the speed does not get to 0
             if abs(ball.speed_x) < 1:
