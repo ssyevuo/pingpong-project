@@ -97,15 +97,21 @@ while running:
         # ball and paddle collisions
         if ball.rect.colliderect(paddle1.rect) or ball.rect.colliderect(paddle2.rect):
             ball.speed_x *= -1
-            # increase the speed of the game
+            # increase the speed of the game as the game progresses
             if ball.speed_x > 0:
-                ball.speed_x += 1
+                ball.speed_x += 0.5
             else:
-                ball.speed_x -= 0
+                ball.speed_x -= 0.5
             if ball.speed_y > 0:
-                ball.speed_y += 1
+                ball.speed_y += 0.5
             else:
-                ball.speed_y -= 1
+                ball.speed_y -= 0.5
+            
+            # ensure that the speed does not get to 0
+            if abs(ball.speed_x) < 1:
+                ball.speed_x = 1 if ball.speed_x > 0 else -1
+            if abs(ball.speed_y) < 1:
+                ball.speed_y = 1 if ball.speed_y > 0 else -1
 
 
         # check if the ball goes off screen 
