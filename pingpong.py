@@ -29,6 +29,21 @@ while running:
 
     paddle1.draw(screen)
     paddle2.draw(screen)
+
+    #returns a tuple of boolean to show the state of the keyboard key
+    keys = pygame.key.get_pressed()
+
+    # when u is pressed paddle 1 moves up and when d is pressed padde 1 moves donw
+    if keys[pygame.K_u]:
+        paddle1.move("up")
+    if keys[pygame.K_d]:
+        paddle1.move("down")
+    # paddle 2 usses the UP and down Keys for the same function as the u and d keys
+    if keys[pygame.K_UP]:
+        paddle2.move("up")
+    if keys[pygame.K_DOWN]:
+        paddle2.move("down")
+
     ball.draw(screen)
     ball.move()
 

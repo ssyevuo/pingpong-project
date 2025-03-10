@@ -28,3 +28,7 @@ The game's constants (window dimensions, colors, paddle and ball size, speeds) a
 
 - The `Ball` class is defined in the `sprites.py`
 - Represents the ball in the game and has methods for drawing and moving the ball.
+
+## Paddle Movement 
+
+- Paddle movement is controlled by the key board keys U ANd D for paddle1 and UP and DOWN  arrow keys for paddle2
