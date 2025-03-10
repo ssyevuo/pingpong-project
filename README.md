@@ -54,3 +54,8 @@ The game's constants (window dimensions, colors, paddle and ball size, speeds) a
 - The balls speed increases after each paddle hit, hence increasing the difficulty of the game
 - The speed resets when a player scores
 
+## Game States
+- The game has a start and game over screens.
+- The start screen prompts the user to press space in order to start the game 
+- The game over declares the winner and the players can restart the game
+
