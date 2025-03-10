@@ -25,3 +25,20 @@ class Paddle:
             self.rect.y = 0
         if self.rect.y > HEIGHT - PADDLE_HEIGHT:
             self.rect.y = HEIGHT - PADDLE_HEIGHT
+
+# ball Class
+class Ball:
+    # initializes the balls rectangle
+    def __init__(self, x, y):
+        self.rect = pygame.Rect(x, y, BALL_SIZE, BALL_SIZE)
+        self.speed_x = BALL_SPEED_X # sets the balls speed horizontally
+        self.speed_y = BALL_SPEED_Y # sets the balls speed vertically
+
+    # drwas the ball as a white rectangle
+    def draw(self, screen):
+        pygame.draw.rect(screen, WHITE, self.rect)
+
+    # updates the balls position by adding its speed
+    def move(self):
+        self.rect.x += self.speed_x
+        self.rect.y += self.speed_y

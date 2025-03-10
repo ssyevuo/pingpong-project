@@ -23,3 +23,8 @@ The game's constants (window dimensions, colors, paddle and ball size, speeds) a
 
 - The `Paddle` class is defined in the `sprites.py`.
 - Represents a paddle in the game and includes methos for drawing and moving the paddle around.
+
+## Ball Class
+
+- The `Ball` class is defined in the `sprites.py`
+- Represents the ball in the game and has methods for drawing and moving the ball.
