@@ -51,6 +51,10 @@ while running:
     if ball.rect.y <= 0 or ball.rect.y >= HEIGHT - BALL_SIZE:
         ball.speed_y *= -1
 
+    # ball and paddle collisions
+    if ball.rect.colliderect(paddle1.rect) or ball.rect.colliderect(paddle2.rect):
+        ball.speed_x *= -1
+
     pygame.display.flip()
 
 pygame.quit()
