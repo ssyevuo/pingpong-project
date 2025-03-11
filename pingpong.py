@@ -4,7 +4,7 @@
 import pygame
 from constants import *
 from sprites import Paddle, Ball
-from utils import reset_ball, keep_score, get_highscores
+from utils import reset_ball, keep_score, get_highscores, clear_highscores
 
 pygame.init()
 
@@ -59,6 +59,8 @@ while running:
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE]:
             game_state = GAME_STATE_PLAYING
+        if keys[pygame.K_c]:
+            clear_highscores
         pygame.display.flip()
         continue # skip the rest of the loop
     

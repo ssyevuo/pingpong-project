@@ -41,4 +41,12 @@ def get_highscores():
     conn.close()
     return highscores
 
+# to delete from the scores
+def clear_highscores():
+    conn = sqlite3.connect('highscores.db')
+    c = conn.cursor()
+    c.execute("DELETE from scores")
+    conn.commit()
+    conn.close()
+
 

@@ -67,6 +67,9 @@ The game's constants (window dimensions, colors for the color scheme, paddle and
  #### Start/ Restart Game
     - SPACE: Start or restart the game after game over
 
+ #### Delete high scores
+    - C: Clear all the high scores 
+
 ## License
 - This project is licensed under the MIT License. See the LICENSE file for details
 
