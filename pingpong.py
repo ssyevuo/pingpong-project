@@ -4,7 +4,7 @@
 import pygame
 from constants import *
 from sprites import Paddle, Ball
-from utils import reset_ball
+from utils import reset_ball, keep_score, get_highscores
 
 pygame.init()
 
@@ -48,6 +48,14 @@ while running:
         screen.blit(player2_text, (3 * WIDTH // 4 - player2_text.get_width() // 2, HEIGHT // 2 - 25))
         screen.blit(start_text, (WIDTH // 2 - start_text.get_width() // 2, HEIGHT // 2 + 50))
 
+        # Display high scores
+        highscores = get_highscores()
+        y_offset = HEIGHT // 2 + 100
+        for player, score in highscores:
+            score_text = font.render(f"{player}: {score}", True, TEXT_COLOR)
+            screen.blit(score_text, (WIDTH // 2 - score_text.get_width() // 2, y_offset))
+            y_offset += 30
+
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE]:
             game_state = GAME_STATE_PLAYING
@@ -59,10 +67,14 @@ while running:
     screen.fill(BACKGROUND_COLOR)
 
     if game_state == GAME_STATE_GAME_OVER:
+        winner = 1 if score1 > score2 else 2
         winner_text = font.render(f"Player {1 if score1 > score2 else 2} wins!", True, TEXT_COLOR)
         restart_text = font.render("Press SPACE to restart", True, TEXT_COLOR)
         screen.blit(winner_text, (WIDTH // 2 - winner_text.get_width() // 2, HEIGHT // 4))
         screen.blit(restart_text, (WIDTH // 2 - restart_text.get_width() // 2, HEIGHT // 2))
+
+        # storing the winners score 
+        keep_score(f"Player {winner}", max(score1, score2)) # stores the winners score
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE]:
